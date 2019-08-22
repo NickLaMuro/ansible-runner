@@ -200,7 +200,7 @@ class Runner(object):
                 Runner.handle_termination(child.pid, is_cancel=False)
                 self.timed_out = True
 
-        stdout_handle.flush()
+        stdout_handle.flush_remaining_buffer()
         stdout_handle.close()
 
         if self.canceled:
